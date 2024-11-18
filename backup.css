@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: #24262b;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    /* Navbar Styling */
+    .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #24262b;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+    }
+    .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .navbar .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+    .navbar .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background 0.3s;
+        font-weight: bold;
+    }
+    .navbar .nav-links a:hover {
+        background-color: #555;
+        border-radius: 5px;
+    }
+
+    /*Carousel*/
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 50px;
+    }
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    .carousel img {
+        min-width: 100vw; 
+        height: auto; 
+        flex-shrink: 0; 
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 100%;
+    }
+    .prev-btn {
+        left: 10px;
+    }
+    .next-btn {
+        right: 10px;
+    }
+
+/* CANETTES */
+
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3.2em;
+    text-align: center;
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+
+#carte {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 50px 0;
+}
+
+#carte .card {
+    position: relative;
+    width: 600px;
+    height: 350px;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.5s ease-out;
+
+}
+
+#carte img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 400px;
+    transition: 0.5s ease-out;
+    z-index: 12;
+}
+
+#carte .card .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    padding: 9px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#carte .card .content h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    line-height: 1em;
+}
+
+#carte .card .content p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#carte .card .content a {
+    position: relative;
+    color: #111;
+    background: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Canette 1 (Gauche) */
+#carte .card.left:hover img {
+    transform: translateX(50%) rotate(15deg) scale(1.2); /* Rotation dans le sens horaire avec décalage à droite */
+}
+
+#carte .card.left:hover .content {
+    left: 20%; /* Décalage du texte vers la droite */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Canette 2 (Droite) */
+#carte .card.right:hover img {
+    transform: translateX(-175%) rotate(-15deg) scale(1.2); /* Rotation inverse avec décalage à gauche */
+}
+
+#carte .card.right:hover .content {
+    left: 80%; /* Décalage du texte vers la gauche */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* HR */
+.hr{
+    border: 0; /* Enlève les bordures par défaut */
+    height: 2px; /* Définit l'épaisseur de la ligne */
+    background-color: white; /* Couleur de la ligne */
+    margin: 2px auto; /* Espace autour du <hr> */
+    width: 80%; /* Largeur de la ligne, ici 80% de la largeur de la page */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Ajoute un léger effet de brillance (optionnel) */
+    border-radius: 5px; /* Arrondir les bords de la ligne (optionnel) */
+    margin-top: 50px;
+}
+
+/* Box Grid Layout */
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+    gap: 50px; /* Espace entre les box */
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+/* Box Styling */
+.box {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+
+}
+
+.box .content {
+    padding: 10px 0;
+}
+
+.box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.box p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff
+}
+
+.box button {
+    background-color: #fff;
+    color: #24262b;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.box button:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .box-container {
+        grid-template-columns: 1fr 1fr; /* Deux colonnes sur les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .box-container {
+        grid-template-columns: 1fr; /* Une colonne sur les très petits écrans */
+    }
+}
+
+/* Container for contact section */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 250px;
+    padding-top: 10px;
+}
+
+/* Image styling */
+.contact-image img {
+    width: 150%;
+    height: auto;
+     /* Adjust the width as needed */
+}
+
+/* Form styling */
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.button {
+    background-color: #24262b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+
+    .contact-image {
+        display: none;
+    }
+
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+}
+
+/* Style du footer */
+footer {
+    background-color: #24262b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .container div {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour les icônes */
+.social-icons a {
+    margin: 0 8px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+/* Responsive design pour les écrans larges */
+@media (min-width: 600px) {
+    footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

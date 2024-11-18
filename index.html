@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Template website - ecommerce</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Logo</div>
+        <button class="burger-menu" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <div class="nav-links">
+            <a href="#newarrival">New Arrival</a>
+            <a href="#drinks">Drinks</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+    
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+
+<div class="carousel-container">
+    <div class="carousel" id="carousel">
+        <img src="img/carousel1.png" alt="Image 1">
+        <img src="img/carousel2.png" alt="Image 2">
+        <img src="img/carousel3.png" alt="Image 3">
+    </div>
+    <button class="carousel-btn prev-btn" onclick="prevSlide()">‹</button>
+    <button class="carousel-btn next-btn" onclick="nextSlide()">›</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const images = carousel.querySelectorAll('img');
+    const totalImages = images.length;
+
+    function showSlide(index) {
+        const offset = -index * 100;
+        carousel.style.transform = `translateX(${offset}vw)`;
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
+        showSlide(currentIndex);
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+        showSlide(currentIndex);
+    }
+</script>
+
+
+<h2 class="title" id="newarrival">RedBull new arrival</h2>
+
+
+
+<div id="carte">
+    <div class="card left"> 
+        <img src="img\canettes1.png" alt="Canette 1">
+        <div class="content">
+            <h2>RedBull the red edition</h2>
+            <p>Red Bull Red Edition, a vibrant energy drink with a delicious cranberry flavor, providing a refreshing boost of energy.</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+    <div class="card right"> 
+        <img src="img\canettes2.png" alt="Canette 2">
+        <div class="content">
+            <h2>Redbull winter edition</h2>
+            <p>Red Bull Winter Edition, a refreshing energy drink with a unique winter-inspired flavor, delivering an intense energy boost.</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+</div>
+
+<hr class="hr">
+<br>
+
+<h2 class="title" id="drinks">All our drinks</h2>
+
+<div class="box-container">
+    <div class="box">
+        <img src="img\redbullblue2.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$2.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+        <div class="box">
+            <img src="img\redbullpassion.png" alt="Image 1">
+            <div class="content">
+                <h2>Product 1</h2>
+                <p>$2.99</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+    <div class="box">
+        <img src="img\redbullwinter.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$2.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="img\redbullpurple.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$3.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="img\redbullpink.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$3.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="img\redbullsummer.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$3.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+    <div class="box">
+        <img src="img\redbullred.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$4.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="img\redbullblue.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$4.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="img\redbullwhite.png" alt="Image 1">
+        <div class="content">
+            <h2>Product 1</h2>
+            <p>$4.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+</div>
+
+<hr class="hr">
+
+<h2 class="title" id="contact">Contact </h2>
+
+<div class="contact-container">
+    <div class="contact-image" >
+        <img src="img/logoredbull.png" alt="Contact Image">
+    </div>
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="button">Send Message</button>
+        </form>
+    </div>
+</div>
+<hr class="hr">
+<footer>
+    <div class="container">
+        <div>© 2024 Github:<a href="https://github.com/LucasC78">LucasC78.</a> All rights reserved.</div>
+        <div>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Use</a> | 
+            <a href="#contact">Contact us</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
